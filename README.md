@@ -6,9 +6,9 @@
 
 **Open-source computer vision for smart pool tables.**
 
-Biljarditutka turns an ordinary billiards / pool table into a smart table with an overhead camera and commodity hardware — without permanently modifying the table.
+Biljarditutka aims to turn an ordinary billiards / pool table into a smart table with an overhead camera and commodity hardware — without permanently modifying the table.
 
-The project starts with one concrete reference installation at **Pukuroom** in Helsinki, Finland, but the software and hardware documentation are intended to be reusable anywhere.
+**Puksu Room** in Helsinki, Finland is a **proposed pilot venue, pending approval**. It is not yet an approved partner, customer or reference installation. The software and hardware documentation are intended to be reusable anywhere. See the [public venue research](docs/clients/puksuroom/README.md) for sourced facts and the distinction between research and an approved case study.
 
 ## First target
 
@@ -47,7 +47,9 @@ biljarditutka/
 ├── src/                   # local Biljarditutka process / CLI
 ├── docs/
 │   ├── ARCHITECTURE.md
-│   └── PUKUROOM_SETUP.md  # reference installation notes
+│   ├── PUKUROOM_SETUP.md  # proposed setup notes; legacy filename
+│   └── clients/
+│       └── puksuroom/     # public research, media links and blank survey
 └── .github/workflows/     # CI
 ```
 
@@ -68,17 +70,17 @@ On Omarchy, use your normal Rust toolchain setup (`rustup` is recommended). Came
 
 ## Principles
 
-1. **Real table first.** Validate ideas at Pukuroom instead of optimizing for hypothetical installations.
+1. **Real table first.** Validate ideas against an approved real-table pilot instead of optimizing for hypothetical installations; Puksu Room is the proposed first venue.
 2. **Local first.** The table should keep working without an Internet connection.
 3. **No permanent table modification for the MVP.** Camera and compute should be removable.
 4. **Vision before rules.** Reliable observation is more valuable than a clever scoreboard that guesses.
-5. **Record useful events, not surveillance.** Prefer short replay/event clips and explicit retention over storing endless raw room video.
-6. **Open hardware when hardware arrives.** Mounts, measurements and mechanical experiments belong in the repository too.
+5. **Record useful events, not surveillance.** Prefer short replay/event clips and explicit retention over storing endless raw room video. Settle the relevant permissions and privacy responsibilities before capture.
+6. **Open hardware when hardware arrives.** Approved, non-sensitive mounts, measurements and mechanical experiments belong in the repository too.
 
 ## Status
 
-Very early prototype / scaffold. The next milestone is live camera ingest and calibration against the real Pukuroom table.
+Very early prototype / scaffold. The next milestone is live camera ingest and calibration against an approved real table. No venue deployment, live ball tracking or automatic scoring is claimed at this stage.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE). Third-party venue names, branding and externally linked photographs are not relicensed by this project; see the [media inventory](docs/clients/puksuroom/MEDIA.md).
