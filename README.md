@@ -10,6 +10,12 @@ Biljarditutka aims to turn an ordinary billiards / pool table into a smart table
 
 **Puksu Room** in Helsinki, Finland is a **proposed pilot venue, pending approval**. It is not yet an approved partner, customer or reference installation. The software and hardware documentation are intended to be reusable anywhere. See the [public venue research](docs/clients/puksuroom/README.md) for sourced facts and the distinction between research and an approved case study.
 
+## Website concept
+
+**[Puksu Room × Biljarditutka — working website concept](docs/clients/puksuroom/site/README.md)**
+
+A Finnish/English restaurant-site redesign with Biljarditutka featured at the start, an interactive simulated shot replay, and public venue/menu/event/contact information. The [single HTML file](docs/clients/puksuroom/site/index.html) has no build step or application backend. This is an independent proposal, not the restaurant's official site or a working camera-tracking deployment.
+
 ## First target
 
 The first useful milestone is intentionally small:
@@ -50,6 +56,7 @@ biljarditutka/
 │   ├── PUKUROOM_SETUP.md  # proposed setup notes; legacy filename
 │   └── clients/
 │       └── puksuroom/     # public research, media links and blank survey
+│           └── site/     # standalone bilingual website concept and checks
 └── .github/workflows/     # CI
 ```
 
