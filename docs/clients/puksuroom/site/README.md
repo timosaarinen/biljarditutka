@@ -6,9 +6,9 @@ A working, responsive **restaurant-website redesign**, with Biljarditutka as the
 
 ## Open it
 
-- [Self-contained HTML source](index.html). Save/open this single file in a modern browser; CSS and JavaScript are embedded. No application install, npm build, API key or server is needed for the demo.
-- [Browser preview through raw.githack](https://raw.githack.com/timosaarinen/biljarditutka/main/docs/clients/puksuroom/site/index.html). This is a third-party rendering service, not project-owned hosting. It may show a confirmation page before opening HTML and may cache changes. The preview endpoint could not be verified from the authoring environment; the committed HTML and local browser tests were verified.
-- Append `?lang=en` to a hosted URL to start in English, or use the FI / EN switch.
+- [Self-contained HTML source](index.html). Save/open this single file in a modern browser; CSS, physics and JavaScript are embedded. No application install, npm build, API key or server is needed for the demo.
+- [Browser preview through raw.githack](https://raw.githack.com/timosaarinen/biljarditutka/main/docs/clients/puksuroom/site/index.html#demo). This is a third-party rendering service, not project-owned hosting. It may show a confirmation page before opening HTML and may cache changes. The committed HTML and local browser tests were verified; third-party cache freshness is not guaranteed. The physical-replay version includes the **¼× Hidastus / Slow motion** button and ball-speed readouts.
+- Append `?lang=en` before the fragment on a hosted URL to start in English, or use the FI / EN switch.
 
 For a local HTTP preview, the directory also works unchanged with any static file server. For example, from this directory:
 
@@ -22,13 +22,14 @@ Open `http://localhost:8000/`. This is an optional development method, not a run
 
 - Finnish-first copy and a working English switch, including navigation, controls, image text and accessibility labels.
 - Biljarditutka-led hero: **Biljardi. Uudella tasolla.** / **Pool. A whole new level.**
-- Original scripted pool-shot canvas demonstration: play, pause, replay, timeline scrubbing and illustrative tracking-overlay toggle.
+- Physics-based pool replay: fixed 240 Hz stepping, swept collisions, momentum transfer, sliding/rolling friction, horizontal spin, cushion noses/jaws and six pocket mouths.
+- Play, pause, restart, deterministic timeline scrubbing, quarter-speed playback, actual simulated speeds in m/s and an illustrative tracking overlay of travelled paths.
 - Restaurant introduction, food/menu navigation, tournament and private-event links, public contacts, map link and sourced opening hours.
 - Responsive mobile navigation, keyboard focus and Escape handling, reduced-motion behavior, image-error fallback and basic no-JavaScript content/navigation.
 - No autoplay; animation stops when the demo leaves view or the document becomes hidden.
 - No application analytics, cookies, camera/microphone access, forms, sign-up, checkout or backend.
 
-The animation is **not** actual camera footage, a physical ball simulation, a tracking implementation or evidence of a working venue deployment. The on-screen tracking overlay is illustrative. Real ball tracking remains a separate Rust milestone.
+The replay now **is a physical simulation**, rather than independent scripted ball tweens. The initial shot is authored; the contact times, trajectories, pot and resting positions are calculated. It is not actual camera footage, a tracking implementation or a calibrated model of the venue. The on-screen tracking overlay remains illustrative. Real ball tracking remains a separate Rust milestone. See [PHYSICS.md](PHYSICS.md) for equations, sources, constants and scope limits, including simplified cushion/pocket geometry and omitted sidespin/throw/jump mechanics.
 
 ## Source and publication boundaries
 
@@ -39,6 +40,14 @@ The site links to the real menu instead of copying prices or inventing availabil
 One externally hosted Venuu photo is embedded as a visibly attributed reference; its bytes are not committed. The browser makes an ordinary request to that image host. `object-fit: contain` preserves the complete image and watermark. Offline/image-failure mode uses a typographic fallback. Reuse permission and current layout have not been confirmed. Before a venue-approved launch, obtain the relevant image/branding permissions or replace the photo with an approved asset. Third-party photos and venue branding are not covered by the project's MIT license.
 
 `noindex,nofollow,noarchive` is included to discourage indexing. It is not access control: this repository and the concept file are public. No private briefing, personal contact dossier, appointment details or commercial negotiations are present.
+
+## Physics checks
+
+```sh
+node --test physics.test.cjs
+```
+
+Node 22's built-in test runner checks the exact inline kernel in `index.html`; no npm dependencies or duplicate physics implementation are involved. The **34 regression tests** cover impact speeds, momentum/energy, head-on and cut shots, cloth friction and spin, no tunnelling, cushions/jaws, all six pockets, frame-rate-independent replay, non-anticipating contact interpolation and timestep convergence. Weaker or misaimed shots are tested to ensure that pocketing is not programmed in advance. The Website physics GitHub Actions workflow runs these checks on relevant changes.
 
 ## Browser checks
 
@@ -52,4 +61,4 @@ python3 smoke_test.py
 
 An already installed Chromium may be selected with `PLAYWRIGHT_CHROMIUM_EXECUTABLE=/path/to/chromium`.
 
-Checked: playback/pause, completed shot, restart, seeking, tracking toggle, both languages and ARIA labels, mobile menu/Escape, reduced motion, no-JS fallback, internal anchor integrity, external-link safety and no JavaScript exceptions. Both languages were checked for horizontal overflow at **360, 390, 768, 1024 and 1440 pixels**. Screenshots were visually reviewed separately. No Rust application code was changed by this website work.
+Checked: displayed speeds immediately before/after impact, quarter-speed playback, playback/pause, completed shot/rest, restart, seeking, tracking toggle, both languages and ARIA labels, mobile menu/Escape, hidden/out-of-view pause, reduced motion, no-JS fallback, internal anchor integrity, external-link safety and no JavaScript exceptions. Both languages were checked for horizontal overflow at **360, 390, 768, 1024 and 1440 pixels**. Desktop/mobile screenshots and a 12-frame shot sequence were visually reviewed. No Rust application code or README logo was changed by this website work.
