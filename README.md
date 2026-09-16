@@ -1,7 +1,7 @@
 # Biljarditutka
 
 <p align="center">
-  <img src="docs/biljarditutka-logo.svg" alt="Biljarditutka logo" width="1000" />
+  <img src="docs/biljarditutka-logo.svg" alt="Biljarditutka logo" width="100%" />
 </p>
 
 **Open-source computer vision for smart pool tables.**
