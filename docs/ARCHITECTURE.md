@@ -65,10 +65,12 @@ Avoid a speculative forest of crates.
 
 ## Data retention and privacy
 
-The intended installation is in a bar / restaurant. Design for event-driven replay buffers rather than indefinite room recording. Raw video retention, if enabled at all, should be explicit and documented for the installation.
+The intended installation environment is a bar / restaurant. Design for event-driven replay buffers rather than indefinite room recording. Raw video retention, if enabled at all, should be explicit and documented for an approved installation. Local processing alone does not remove privacy obligations. Settle the applicable data-processing arrangements before capture; do not enable audio or persistent video storage by default.
 
 ## MVP definition
 
-The first technical milestone is complete when a real Pukuroom camera feed can be calibrated and the system can continuously output stable 2D positions for visible pool balls with enough confidence to inspect failures.
+The first technical milestone is complete when a camera feed from an approved real-table test can be calibrated and the system can continuously output stable 2D positions for visible pool balls with enough confidence to inspect failures.
+
+Puksu Room is a proposed pilot venue, pending approval; no deployment or venue endorsement is implied. See the [public research profile](clients/puksuroom/README.md).
 
 Automatic scoring is intentionally outside that milestone.
