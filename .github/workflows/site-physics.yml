@@ -1,0 +1,27 @@
+name: Website physics
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/clients/puksuroom/site/**'
+      - '.github/workflows/site-physics.yml'
+  pull_request:
+    paths:
+      - 'docs/clients/puksuroom/site/**'
+      - '.github/workflows/site-physics.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  physics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test the exact inline physics shipped in the website
+        run: node --test docs/clients/puksuroom/site/physics.test.cjs
