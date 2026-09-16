@@ -17,6 +17,7 @@
 @media(max-width:520px){.wrap{width:calc(100% - 36px)}.concept{font-size:10px;padding:8px 12px}.brand-name{font-size:18px}.brand-icon{height:31px;width:31px;font-size:21px}.brand{gap:9px}.brand-name small{font-size:8px;letter-spacing:.13em}.topbar{gap:9px}.header-tools{gap:5px}.language button{min-width:30px;padding:11px 4px}.menu-toggle{font-size:12px;padding:7px 9px}.hero h1{font-size:69px;margin:20px 0 23px}.hero .eyebrow{font-size:10px;letter-spacing:.12em}.hero-copy>p{font-size:15px}.hero{padding-bottom:40px}.actions{gap:10px;margin-top:24px}.button{padding:12px 16px;font-size:12px}.demo-top{padding:19px 17px 0}.demo-top h2{font-size:22px}.demo-mark{font-size:10px}.demo-tag{font-size:9px;padding:5px 7px}.demo-bottom{padding:0 17px 17px}.controls{gap:8px}.play{min-width:113px;padding:8px 10px}.demo-result{font-size:11px}.demo-result .timestamp{font-size:10px}.benefit-strip{grid-template-columns:1fr;gap:11px;padding:21px 0}.strip-item{justify-content:flex-start;font-size:13px}.strip-item b{min-width:26px;font-size:23px}.strip-item+.strip-item{border:0}.features{grid-template-columns:1fr;gap:30px}.feature-number{margin-bottom:14px}.feature h3{font-size:23px}.feature-status{margin-top:16px}.section{padding:53px 0}.section-heading{margin-bottom:30px}.split-card{grid-template-columns:1fr}.split-card>div+div{border-left:0;border-top:1px solid var(--line)}.pilot-box{grid-template-columns:1fr;padding:36px 0;gap:27px}.pilot-box h2{font-size:39px}.hours{padding:22px}.footer-top{flex-direction:column;gap:25px}.footer-links{justify-content:flex-start;gap:16px}.credit{flex-direction:column;gap:8px}.section-heading p{font-size:14px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 @media print{body{background:white;color:#111}p,.eyebrow{color:#333}.concept{color:#111;background:#eee}.header-tools,nav,.controls,.tracking,.actions{display:none!important}.wrap{width:100%}.section{padding:25px 0}.hero{padding:20px 0}.demo,.venue-band,.split-card>div+div{background:#eee;color:#111;box-shadow:none}h1{font-size:60px!important}h2{font-size:35px!important}.hero h1 em{color:#55461f}.demo-footnote,.demo-result .result{color:#333}.feature,.photo,.hours,.demo{break-inside:avoid}}
+.physics-info{display:flex;gap:8px 16px;align-items:center;flex-wrap:wrap;margin-top:10px;font:10px/1.5 ui-monospace,monospace;color:var(--muted)}.physics-info output{color:var(--ink);font-variant-numeric:tabular-nums}.slow-button{background:transparent;border:1px solid #69705d;padding:8px 11px;min-height:44px;margin-left:auto;font:inherit;font-size:11px}.slow-button[aria-pressed=true]{background:var(--gold);color:var(--bg);border-color:var(--gold)}
 </style>
 </head>
 <body>
@@ -32,8 +33,8 @@
 <div class="hero-copy"><div class="eyebrow" data-en="PUKSU ROOM × BILJARDITUTKA / THE CONCEPT">PUKSU ROOM × BILJARDITUTKA / KONSEPTI</div><h1 id="hero-title"><span data-en="Pool.">Biljardi.</span><em><span data-en="A whole">Uudella</span><span data-en="new level.">tasolla.</span></em></h1><p data-en="What if the shot of the night didn't have to become just a story? Biljarditutka brings a new idea to the table: ball tracking, replays and more to play for.">Entä jos illan paras lyönti ei jäisi vain tarinaksi? Biljarditutka tuo pöytään uuden idean: palloseurannan, uusinnat ja lisää pelattavaa.</p><div class="actions"><button class="button" id="hero-play" type="button"><span data-en="Try the replay">Kokeile uusintaa</span><span class="arrow" aria-hidden="true">↗</span></button><a class="button secondary" href="#ravintola" data-en="Discover Puksu Room">Tutustu Puksuun</a></div><p class="hero-note" data-en="A proposal for Puksu Room. The interactive preview is simulated; the pilot and its features are not yet available.">Ehdotus Puksu Roomille. Interaktiivinen esimerkki on simulaatio; pilotti ja sen ominaisuudet eivät ole vielä käytössä.</p></div>
 <div class="demo" id="demo" aria-label="Biljarditutkan simuloitu lyöntiuusinta" data-en-aria="Biljarditutka simulated shot replay">
 <div class="demo-top"><div><div class="demo-mark">BILJARDITUTKA / 01</div><h2 data-en="The shot worth seeing twice.">Tämä kannattaa katsoa uudestaan.</h2></div><span class="demo-tag" data-en="SIMULATION">SIMULAATIO</span></div>
-<div class="canvas-wrap"><div class="still" aria-hidden="true"><span>8</span></div><canvas id="table" width="1200" height="732" role="img" aria-label="Kuvitteellinen biljardipöytä: valkoinen pallo lyö kasin kulmapussiin. Ei oikeaa kamerakuvaa." data-en-aria="Illustrated pool table: a cue ball pots the eight in a corner. Not real camera footage.">Biljarditutka — simuloitu lyöntiuusinta / simulated shot replay.</canvas></div>
-<div class="demo-bottom"><div class="demo-result"><span id="result" class="result" aria-live="polite">Valmiina illan parhaaseen?</span><span class="timestamp"><span id="time">00:00</span> / 00:04</span></div><div class="controls"><button class="play" type="button" id="play">▶ Katso lyönti</button><input id="timeline" type="range" min="0" max="1000" value="0" step="1" aria-label="Uusinnan aikajana" data-en-aria="Replay timeline"><button type="button" class="restart" id="restart" aria-label="Aloita alusta" data-en-aria="Restart replay">↺</button></div><label class="tracking"><input id="tracking" type="checkbox" checked><span data-en="Show illustrative tracking overlay">Näytä havainnollistava seurantakerros</span></label><p class="demo-footnote" data-en="Scripted animation, not a camera feed or a working tracking system.">Käsikirjoitettu animaatio, ei kamerasyöte tai toimiva seurantajärjestelmä.</p></div><noscript><p class="nojs">Uusintademo ja kielenvaihto vaativat JavaScriptin. Muut tiedot ja linkit toimivat ilman sitä.</p></noscript>
+<div class="canvas-wrap"><div class="still" aria-hidden="true"><span>8</span></div><canvas data-replay-model="rigid-sphere-v1" id="table" width="1200" height="732" role="img" aria-label="Kuvitteellinen biljardipöytä: valkoinen pallo lyö kasin kulmapussiin. Ei oikeaa kamerakuvaa." data-en-aria="Illustrated pool table: a cue ball pots the eight in a corner. Not real camera footage.">Biljarditutka — simuloitu lyöntiuusinta / simulated shot replay.</canvas></div>
+<div class="demo-bottom"><div class="demo-result"><span id="result" class="result" aria-live="polite">Valmiina illan parhaaseen?</span><span class="timestamp"><span id="time">00:00.00</span> / <span id="duration">—</span></span></div><div class="controls"><button class="play" type="button" id="play">▶ Katso lyönti</button><input id="timeline" type="range" min="0" max="1000" value="0" step="1" aria-label="Uusinnan aikajana" data-en-aria="Replay timeline"><button type="button" class="restart" id="restart" aria-label="Aloita alusta" data-en-aria="Restart replay">↺</button></div><label class="tracking"><input id="tracking" type="checkbox" checked><span data-en="Show illustrative tracking overlay">Näytä havainnollistava seurantakerros</span></label><div class="physics-info"><span><span data-en="Cue">Valkoinen</span> <output id="cue-speed">—</output></span><span><span data-en="Eight">Kasi</span> <output id="eight-speed">—</output></span><button id="slow" class="slow-button" type="button" aria-pressed="false">¼× Hidastus</button></div><p class="demo-footnote" data-en="Physics-based replay: collisions, sliding and rolling. Illustrative table, not camera footage or a calibrated tracking system.">Fysiikkapohjainen uusinta: törmäykset, liuku ja vierintä. Havainnollistava pöytä, ei kamerakuvaa tai kalibroitu seurantajärjestelmä.</p></div><noscript><p class="nojs">Uusintademo ja kielenvaihto vaativat JavaScriptin. Muut tiedot ja linkit toimivat ilman sitä.</p></noscript>
 </div>
 </section>
 <div class="wrap benefit-strip"><div class="strip-item"><b aria-hidden="true">01</b><span data-en="One table. A new perspective.">Yksi pöytä. Uusi näkökulma.</span></div><div class="strip-item"><b aria-hidden="true">↺</b><span data-en="Replay the moments that matter.">Parhaat hetket, vielä kerran.</span></div><div class="strip-item"><b aria-hidden="true">∞</b><span data-en="Open source. Built around play.">Avoin projekti. Peli edellä.</span></div></div>
@@ -45,6 +46,249 @@
 <section class="wrap section visit" id="yhteys" aria-labelledby="visit-title"><div><div class="eyebrow" data-en="RIGHT BY THE STATION">ASEMAN VIERESSÄ</div><h2 id="visit-title" data-en="See you in Puksu.">Nähdään Puksussa.</h2><address>Pukinmäenaukio 4<br>00720 Helsinki</address><p data-en="Beside Pukinmäki railway station. These are the venue's public contact details, not a Biljarditutka booking service.">Pukinmäen juna-aseman vieressä. Nämä ovat ravintolan julkiset yhteystiedot, eivät Biljarditutkan varauspalvelu.</p><div class="contact-links"><a href="tel:+358504478284">050 447 8284</a><a href="mailto:info@puksuroom.fi">info@puksuroom.fi</a></div><div class="actions"><a class="button" href="https://www.google.com/maps/search/?api=1&query=Puksu+Room+Pukinm%C3%A4enaukio+4+Helsinki" target="_blank" rel="noopener noreferrer" data-en="Open in Maps ↗">Avaa kartassa ↗</a><a class="button secondary" href="https://puksuroom.fi/" target="_blank" rel="noopener noreferrer" data-en="Official venue website ↗">Ravintolan viralliset sivut ↗</a></div></div><div class="hours"><h3 data-en="Published opening hours">Ilmoitetut aukioloajat</h3><dl><div><dt data-en="Monday–Tuesday">Maanantai–tiistai</dt><dd>09:00–02:00</dd></div><div><dt data-en="Wednesday–Saturday">Keskiviikko–lauantai</dt><dd>09:00–04:00</dd></div><div><dt data-en="Sunday">Sunnuntai</dt><dd>09:00–02:00</dd></div><div><dt data-en="Kitchen">Keittiö</dt><dd>16:00–22:00</dd></div></dl><p class="small" data-en="Source: the official website's detailed footer, checked 16 September 2026. Its general header gives different closing hours. Confirm current hours and exceptions with the venue.">Lähde: virallisen sivuston yksityiskohtainen alatunniste, tarkistettu 16.9.2026. Sivuston yleisotsikossa on eri sulkemisaika. Varmista ajantasaiset ajat ja poikkeukset ravintolasta.</p></div></section>
 </main>
 <footer class="footer"><div class="wrap"><div class="footer-top"><a class="brand" href="#main"><span class="brand-icon" aria-hidden="true">P</span><span class="brand-name">PUKSU ROOM<small>THE TABLE IS JUST THE BEGINNING.</small></span></a><div class="footer-links"><a href="https://www.instagram.com/puksuroom/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.facebook.com/PUKSUNROOM/" target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href="https://github.com/timosaarinen/biljarditutka" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div><div class="footer-bottom" id="about-concept"><details><summary data-en="About this independent concept, sources & image rights">Tietoa itsenäisestä konseptista, lähteistä & kuvien oikeuksista</summary><p data-en="This is a Biljarditutka-created redesign concept, not the official Puksu Room website or an announcement of a partnership. Venue participation, branding and publication have not been approved. No meeting notes, private contacts or business intelligence are included.">Tämä on Biljarditutka-projektin itsenäinen sivustouudistuskonsepti, ei Puksu Roomin virallinen sivusto tai kumppanuusilmoitus. Ravintolan osallistumista, brändikäyttöä tai julkaisua ei ole hyväksytty. Sivusto ei sisällä tapaamismuistiinpanoja, yksityisiä yhteystietoja tai liiketoiminnan taustaselvityksiä.</p><p data-en="The replay is an original scripted canvas animation. No camera, microphone, tracking analytics, cookies, sign-up or booking form is used. The external reference photo loads from Venuu's image host, which receives an ordinary browser request. External links take you to third-party services.">Uusinta on alkuperäinen, käsikirjoitettu canvas-animaatio. Sivusto ei käytä kameraa, mikrofonia, kävijäseurantaa, evästeitä, rekisteröintiä tai varauslomaketta. Ulkoinen kuvaviite latautuu Venuun kuvapalvelimelta, joka saa tavallisen selainpyynnön. Ulkoiset linkit vievät kolmansien osapuolten palveluihin.</p><p data-en="The venue photograph is an external reference, not an openly licensed project asset. Its watermark is retained; the current layout and publication rights are unverified. Obtain rights-holder permission or replace it with an approved photo before a venue-approved launch. The project's MIT license does not cover third-party photos or venue branding.">Ravintolakuva on ulkoinen kuvaviite, ei avoimesti lisensoitu projektitiedosto. Vesileima säilyy näkyvissä; nykyistä sisustusta tai julkaisuoikeuksia ei ole vahvistettu. Hanki oikeudenhaltijan lupa tai vaihda kuva hyväksyttyyn ennen ravintolan hyväksymää julkaisua. Projektin MIT-lisenssi ei kata kolmansien osapuolten kuvia tai ravintolan brändiä.</p><div class="sources"><a href="https://puksuroom.fi/" target="_blank" rel="noopener noreferrer">Puksu Room ↗</a><a href="https://www.myhelsinki.fi/places/puksu-room/" target="_blank" rel="noopener noreferrer">MyHelsinki ↗</a><a href="https://venuu.fi/tilat/puksu-room" target="_blank" rel="noopener noreferrer">Venuu / photo ↗</a><a href="https://cuescore.com/puksuroom" target="_blank" rel="noopener noreferrer">CueScore ↗</a><a href="https://github.com/timosaarinen/biljarditutka/tree/main/docs/clients/puksuroom" target="_blank" rel="noopener noreferrer" data-en="Public source register ↗">Julkinen lähderekisteri ↗</a></div></details><div class="credit"><span data-en="PUKSU ROOM × BILJARDITUTKA / INDEPENDENT CONCEPT / 2026">PUKSU ROOM × BILJARDITUTKA / ITSENÄINEN KONSEPTI / 2026</span><span data-en="Not a live venue service. Built for a conversation.">Ei ravintolan live-palvelu. Keskustelun avaukseksi.</span></div></div></div></footer>
+<script id="pool-physics">
+/* Planar rigid-sphere replay. SI units; no keyframed ball positions.
+ * Cloth equations: https://ekiefl.github.io/2020/04/24/pooltool-theory/
+ * Approximate constants: https://drdavepoolinfo.com/faq/physics/physical-properties/
+ * Equal-height, frictionless ball contacts; simplified cushion/pocket geometry.
+ * This is NOT a calibrated model of the venue's table. See PHYSICS.md.
+ */
+globalThis.BiljarditutkaPhysics = (() => {
+  'use strict';
+  const EPS = 1e-10;
+  const DEFAULTS = Object.freeze({
+    dt: 1 / 240, gravity: 9.81, radius: 0.028575, mass: 0.17,
+    sliding: 0.2, rolling: 0.012, restitution: 0.96, cushion: 0.78,
+    width: 2, height: 1, cornerMouth: 0.085, sideMouth: 0.075,
+    pocketRadius: 0.046, maxSeconds: 20
+  });
+  const norm = (x, y) => Math.hypot(x, y);
+  const cloneBall = b => ({...b, mark: [...b.mark]});
+
+  function ball(id, x, y, options = {}) {
+    return {id, x, y, vx: 0, vy: 0, sx: 0, sy: 0,
+      // (sx,sy) = R*(omega_y,-omega_x); rolling means (sx,sy)=(vx,vy).
+      radius: DEFAULTS.radius, mass: DEFAULTS.mass, mark: [0, 0, 1],
+      pocketedAt: null, pocketIndex: -1, dropVx: 0, dropVy: 0, ...options};
+  }
+
+  function geometry(c) {
+    const w = c.width, h = c.height, g = c.cornerMouth, s = c.sideMouth;
+    // Each segment is an inward-facing cushion nose, including rounded end jaws.
+    const rails = [
+      [g,0,w/2-s,0,0,1], [w/2+s,0,w-g,0,0,1],
+      [g,h,w/2-s,h,0,-1], [w/2+s,h,w-g,h,0,-1],
+      [0,g,0,h-g,1,0], [w,g,w,h-g,-1,0]
+    ];
+    const pockets = [[0,0],[w/2,-0.025],[w,0],[0,h],[w/2,h+0.025],[w,h]];
+    return {rails, pockets};
+  }
+
+  function world(balls, options = {}) {
+    const config = {...DEFAULTS, ...options};
+    if (!(config.dt > 0 && config.dt <= 1/30) || config.sliding < 0 ||
+        config.rolling < 0 || config.restitution < 0 || config.restitution > 1 ||
+        config.cushion < 0 || config.cushion > 1) throw new RangeError('Invalid physics settings');
+    return {time: 0, balls: balls.map(cloneBall), config, ...geometry(config), events: []};
+  }
+
+  function energy(b) {
+    // I = 2/5*m*R^2. Horizontal spin is represented in rim-speed units.
+    return b.mass * (0.5*(b.vx*b.vx+b.vy*b.vy) + 0.2*(b.sx*b.sx+b.sy*b.sy));
+  }
+
+  function cloth(b, dt, c) {
+    if (b.pocketedAt !== null) return;
+    const ux = b.vx-b.sx, uy = b.vy-b.sy, slip = norm(ux,uy);
+    if (slip > EPS) {
+      if (c.sliding === 0) return;
+      const a = c.sliding*c.gravity;
+      const untilRoll = slip / (3.5*a), h = Math.min(dt, untilRoll);
+      const jx = a*h*ux/slip, jy = a*h*uy/slip;
+      b.vx -= jx; b.vy -= jy;
+      b.sx += 2.5*jx; b.sy += 2.5*jy;
+      dt -= h;
+      if (h < untilRoll) return;
+      b.sx = b.vx; b.sy = b.vy; // Exact sliding -> rolling transition, no reversal jitter.
+    }
+    const speed = norm(b.vx,b.vy);
+    if (speed <= EPS) { b.vx=b.vy=b.sx=b.sy=0; return; }
+    const ratio = Math.max(0, 1-c.rolling*c.gravity*dt/speed);
+    b.vx *= ratio; b.vy *= ratio; b.sx = b.vx; b.sy = b.vy;
+  }
+
+  function rotate(b, dt) {
+    // Rodrigues rotation of a painted pole on the sphere, from actual angular velocity.
+    const wx = -b.sy/b.radius, wy = b.sx/b.radius, w = norm(wx,wy);
+    if (w <= EPS) return;
+    const ax=wx/w, ay=wy/w, [x,y,z]=b.mark;
+    const co=Math.cos(w*dt), si=Math.sin(w*dt), dot=ax*x+ay*y;
+    b.mark = [x*co+ay*z*si+ax*dot*(1-co),
+      y*co-ax*z*si+ay*dot*(1-co), z*co+(ax*y-ay*x)*si];
+  }
+
+  function collide(a, b, restitution) {
+    const dx=b.x-a.x, dy=b.y-a.y, distance=norm(dx,dy);
+    const nx=distance>EPS?dx/distance:1, ny=distance>EPS?dy/distance:0;
+    const approach=(b.vx-a.vx)*nx+(b.vy-a.vy)*ny;
+    if (approach >= -EPS) return null;
+    const before=[a.vx,a.vy,b.vx,b.vy], energyBefore=energy(a)+energy(b);
+    const impulse=-(1+restitution)*approach/(1/a.mass+1/b.mass);
+    a.vx-=impulse*nx/a.mass; a.vy-=impulse*ny/a.mass;
+    b.vx+=impulse*nx/b.mass; b.vy+=impulse*ny/b.mass;
+    // Frictionless, central impulse: spin is not reset or invented by the impact.
+    const overlap=Math.max(0,a.radius+b.radius-distance)+1e-12;
+    a.x-=nx*overlap*b.mass/(a.mass+b.mass); a.y-=ny*overlap*b.mass/(a.mass+b.mass);
+    b.x+=nx*overlap*a.mass/(a.mass+b.mass); b.y+=ny*overlap*a.mass/(a.mass+b.mass);
+    return {type:'ball', a:a.id, b:b.id, nx,ny, distance, before,
+      after:[a.vx,a.vy,b.vx,b.vy], energyBefore, energyAfter:energy(a)+energy(b)};
+  }
+
+  function circleTime(px,py,vx,vy,r,limit) {
+    const a=vx*vx+vy*vy, b=px*vx+py*vy, c=px*px+py*py-r*r;
+    if (a<=EPS || b>=-EPS) return Infinity;
+    if (c<=EPS) return 0;
+    const d=b*b-a*c;
+    if (d<0) return Infinity;
+    // Stable smaller quadratic root; avoids subtracting near-equal numbers.
+    const t=c/(-b+Math.sqrt(d));
+    return t>=0 && t<=limit+EPS ? Math.min(t,limit) : Infinity;
+  }
+
+  function railHit(b, rail, limit) {
+    const [ax,ay,bx,by,nx,ny]=rail;
+    const tx=bx-ax, ty=by-ay, length2=tx*tx+ty*ty;
+    let best=null;
+    const vn=b.vx*nx+b.vy*ny;
+    if (vn < -EPS) {
+      const distance=(b.x-ax)*nx+(b.y-ay)*ny;
+      const t=(b.radius-distance)/vn;
+      const along=((b.x+b.vx*t-ax)*tx+(b.y+b.vy*t-ay)*ty)/length2;
+      if (t>=-EPS && t<=limit+EPS && along>=0 && along<=1)
+        best={time:Math.max(0,Math.min(t,limit)),nx,ny};
+    }
+    for (const [x,y] of [[ax,ay],[bx,by]]) {
+      const t=circleTime(b.x-x,b.y-y,b.vx,b.vy,b.radius,limit);
+      if (Number.isFinite(t) && (!best || t<best.time)) {
+        const dx=b.x+b.vx*t-x,dy=b.y+b.vy*t-y,d=norm(dx,dy);
+        if (d>EPS) best={time:t,nx:dx/d,ny:dy/d};
+      }
+    }
+    return best;
+  }
+
+  function drift(state, dt, record) {
+    let left=dt, elapsed=0, count=0;
+    while (left>EPS) {
+      if (++count>128) throw new Error('Contact solver did not converge');
+      let hit=null;
+      const take=h=>{if (h && Number.isFinite(h.time) && (!hit || h.time<hit.time)) hit=h;};
+      const active=state.balls.filter(b=>b.pocketedAt===null);
+      for (let i=0;i<active.length;i++) {
+        const a=active[i];
+        for (let j=i+1;j<active.length;j++) {
+          const b=active[j];
+          take({type:'ball',a,b,time:circleTime(b.x-a.x,b.y-a.y,b.vx-a.vx,
+            b.vy-a.vy,a.radius+b.radius,left)});
+        }
+        for (const rail of state.rails) {
+          const h=railHit(a,rail,left);
+          if (h) take({...h,type:'rail',a});
+        }
+        state.pockets.forEach(([x,y],index)=>{
+          const inside=norm(a.x-x,a.y-y)<=state.config.pocketRadius;
+          take({type:'pocket',a,index,time:inside?0:circleTime(a.x-x,a.y-y,
+            a.vx,a.vy,state.config.pocketRadius,left)});
+        });
+      }
+      const h=hit?hit.time:left;
+      for (const b of active) { b.x+=b.vx*h; b.y+=b.vy*h; rotate(b,h); }
+      elapsed+=h; left-=h;
+      const time=state.time+elapsed;
+      if (!hit) { if (record) record(time); break; }
+      let event;
+      if (hit.type==='ball') event=collide(hit.a,hit.b,state.config.restitution);
+      else if (hit.type==='rail') {
+        const b=hit.a, {nx,ny}=hit, before=[b.vx,b.vy];
+        const vn=b.vx*nx+b.vy*ny;
+        b.vx-=(1+state.config.cushion)*vn*nx;
+        b.vy-=(1+state.config.cushion)*vn*ny;
+        b.x+=nx*1e-12; b.y+=ny*1e-12;
+        event={type:'rail',a:b.id,nx,ny,before,after:[b.vx,b.vy]};
+      } else {
+        const b=hit.a;
+        b.pocketedAt=time; b.pocketIndex=hit.index;
+        b.dropVx=b.vx; b.dropVy=b.vy;
+        b.vx=b.vy=b.sx=b.sy=0;
+        event={type:'pocket',a:b.id,index:hit.index,x:b.x,y:b.y};
+      }
+      if (event) state.events.push({...event,time});
+      if (record) record(time); // A key at EVERY contact; never interpolate across an impact.
+    }
+  }
+
+  function step(state, dt=state.config.dt, record=null) {
+    if (!(dt>0 && dt<=1/30)) throw new RangeError('Step must be in (0, 1/30] seconds');
+    // Strang split: dissipative cloth half-kicks around continuous swept-contact drift.
+    // Collision times are solved inside each tick, not deferred until balls overlap.
+    for (const b of state.balls) cloth(b,dt/2,state.config);
+    if (record) record(state.time);
+    drift(state,dt,record);
+    for (const b of state.balls) cloth(b,dt/2,state.config);
+    state.time+=dt;
+    if (record) record(state.time);
+    return state;
+  }
+
+  function defaultBalls(speed=1.05, cut=0.28) {
+    const eight=ball('8',1.3575,0.57), dx=2-eight.x,dy=1-eight.y,d=norm(dx,dy);
+    const nx=dx/d,ny=dy/d;
+    // Only the initial layout/aim is authored. No target path, pot time or stop position.
+    const ux=nx*Math.cos(cut)-ny*Math.sin(cut),uy=nx*Math.sin(cut)+ny*Math.cos(cut);
+    const contactX=eight.x-2*DEFAULTS.radius*nx,contactY=eight.y-2*DEFAULTS.radius*ny;
+    const cue=ball('cue',contactX-0.63*ux,contactY-0.63*uy,
+      {vx:speed*ux,vy:speed*uy,sx:speed*ux,sy:speed*uy});
+    return [ball('1',0.3475,0.465),ball('3',1.625,0.2475),
+      ball('4',0.8425,0.6075),ball('2',0.2075,0.7975),ball('9',1.1775,0.8),eight,cue];
+  }
+
+  function replay(balls=defaultBalls(), options={}) {
+    const state=world(balls,options), frames=[];
+    const record=time=>{
+      const frame={time,balls:state.balls.map(cloneBall)};
+      if (frames.length && Math.abs(frames.at(-1).time-time)<1e-12) frames[frames.length-1]=frame;
+      else frames.push(frame);
+    };
+    record(0);
+    const resting=()=>state.balls.every(b=>b.pocketedAt!==null ||
+      (norm(b.vx,b.vy)<EPS && norm(b.sx,b.sy)<EPS));
+    while (state.time<state.config.maxSeconds && !resting()) step(state,state.config.dt,record);
+    const settled=resting();
+    // A short still ending only AFTER the simulation settles, never a forced ball stop.
+    if (settled) record(state.time+0.45);
+    return {frames,events:state.events,duration:frames.at(-1).time,settled,
+      config:state.config,rails:state.rails,pockets:state.pockets};
+  }
+
+  function sample(replay, seconds) {
+    const time=Math.max(0,Math.min(replay.duration,seconds)), frames=replay.frames;
+    let lo=0,hi=frames.length;
+    while (lo<hi) {const mid=(lo+hi)>>>1;if (frames[mid].time<=time) lo=mid+1; else hi=mid;}
+    const a=frames[Math.max(0,lo-1)],b=frames[Math.min(lo,frames.length-1)];
+    const u=b.time>a.time?(time-a.time)/(b.time-a.time):0;
+    const balls=a.balls.map((v,i)=>{
+      const next=b.balls[i],out=cloneBall(v);
+      out.x+=(next.x-v.x)*u; out.y+=(next.y-v.y)*u;
+      out.mark=v.mark.map((n,j)=>n+(next.mark[j]-n)*u);
+      const length=Math.hypot(...out.mark);
+      out.mark=out.mark.map(n=>n/length);
+      return out;
+    });
+    return {time,balls};
+  }
+  return {DEFAULTS,ball,world,energy,cloth,collide,circleTime,step,defaultBalls,replay,sample};
+})();
+</script>
 <script>
 'use strict';
 (() => {
@@ -67,34 +311,123 @@
  let progress=0,playing=false,last=0,raf=0,lastStatus='';
  const copy={fi:{ready:'Valmiina illan parhaaseen?',moving:'Lyönti liikkeellä…',contact:'Osuma kasiin.',pot:'Kasi pussiin. Katso vielä kerran.',play:'▶ Katso lyönti',pause:'Ⅱ Tauko',again:'↺ Katso uudelleen',table:'PÖYTÄNÄKYMÄ / KUVITTEELLINEN',overlay:'SEURANTAKERROS / DEMO'},en:{ready:'Ready for the shot of the night?',moving:'The shot is in motion…',contact:'Contact with the eight.',pot:'Eight ball potted. Worth another look.',play:'▶ Play the shot',pause:'Ⅱ Pause',again:'↺ Play again',table:'TABLE VIEW / ILLUSTRATIVE',overlay:'TRACKING OVERLAY / DEMO'}};
  const clamp=(n,a=0,b=1)=>Math.max(a,Math.min(b,n));
- const ease=t=>1-Math.pow(1-clamp(t),2);
- const lerp=(a,b,t)=>a+(b-a)*t;
+ const physics=globalThis.BiljarditutkaPhysics, simulation=physics.replay();
+ const slow=document.getElementById('slow'),duration=document.getElementById('duration');
+ const cueSpeed=document.getElementById('cue-speed'),eightSpeed=document.getElementById('eight-speed');
+ let playbackRate=1;
+ const formatTime=seconds=>{
+   const hundredths=Math.floor((seconds+1e-8)*100);
+   return String(Math.floor(hundredths/6000)).padStart(2,'0')+':'+
+     String(Math.floor(hundredths/100)%60).padStart(2,'0')+'.'+String(hundredths%100).padStart(2,'0');
+ };
+ const impact=simulation.events.find(e=>e.type==='ball' && [e.a,e.b].includes('8'));
+ const px=x=>100+x*400,py=y=>94+y*400;
+ const colors={'1':'#d2ad32','2':'#375ab1','3':'#c34b39','4':'#855dac','8':'#171a15','9':'#d2ad32',cue:'#f5efdb'};
  function circle(x,y,r,fill){ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle=fill;ctx.fill();}
  function rounded(x,y,w,h,r,fill){ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fillStyle=fill;ctx.fill();}
- function ball(x,y,color,num,scale=1,stripe=false){if(scale<=0)return;ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);ctx.shadowColor='#0009';ctx.shadowBlur=9;ctx.shadowOffsetY=5;circle(0,0,13,stripe?'#f7f3da':color);ctx.shadowColor='transparent';if(stripe){ctx.save();ctx.beginPath();ctx.arc(0,0,13,0,Math.PI*2);ctx.clip();ctx.fillStyle=color;ctx.fillRect(-14,-7,28,14);ctx.restore();}const g=ctx.createRadialGradient(-4,-5,1,0,0,15);g.addColorStop(0,'#ffffff70');g.addColorStop(.45,'#ffffff00');g.addColorStop(1,'#00000080');circle(0,0,13,g);if(num){circle(0,0,6.5,'#f8f4df');ctx.fillStyle='#1c211b';ctx.font='bold 9px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(num,0,.6);}ctx.restore();}
- function draw(){if(!ctx)return;ctx.setTransform(canvas.width/1000,0,0,canvas.height/610,0,0);ctx.clearRect(0,0,1000,610);
-  ctx.save();ctx.shadowColor='#0007';ctx.shadowBlur=35;ctx.shadowOffsetY=17;rounded(60,63,880,468,25,'#302d22');ctx.restore();
-  rounded(61,62,878,466,24,'#776344');rounded(67,67,866,454,22,'#514633');rounded(76,76,848,436,18,'#1a3424');rounded(100,94,800,400,9,'#216b4c');
-  let glow=ctx.createRadialGradient(490,250,30,500,294,440);glow.addColorStop(0,'#5e997929');glow.addColorStop(1,'#061c2060');rounded(100,94,800,400,9,glow);
-  ctx.save();ctx.globalAlpha=.085;ctx.fillStyle='#d8e6af';for(let n=0;n<2200;n++){const x=104+((n*167)%791),y=98+((n*113)%392);ctx.fillRect(x,y,1,1);}ctx.restore();
-  ctx.strokeStyle='#73a38055';ctx.lineWidth=2;ctx.strokeRect(111,105,778,378);
-  for(const [x,y] of [[101,94],[500,89],[899,94],[101,494],[500,499],[899,494]]){circle(x,y,22,'#817046');circle(x,y+1,17,'#080e0a');circle(x,y+4,12,'#040a06');}
-  for(let i=1;i<8;i++){if(i===4)continue;circle(100+i*100,76,2.5,'#cebd86');circle(100+i*100,511,2.5,'#cebd86');}for(let i=1;i<4;i++){circle(82,94+i*100,2.5,'#cebd86');circle(918,94+i*100,2.5,'#cebd86');}
-  ctx.textAlign='center';ctx.font='12px monospace';ctx.fillStyle='#acb69b';ctx.fillText(copy[lang].table,500,571);
-  const cueT=ease(progress/.42),potT=ease((progress-.42)/.47);const cx=lerp(330,620,cueT),cy=lerp(115,307,cueT);
-  const targetX=lerp(643,898,potT),targetY=lerp(322,492,potT),scale=1-clamp((progress-.82)/.1);
-  if(tracking.checked){ctx.save();ctx.strokeStyle='#dddaaa80';ctx.lineWidth=2;ctx.setLineDash([7,8]);ctx.beginPath();ctx.moveTo(330,115);ctx.lineTo(620,307);ctx.moveTo(643,322);ctx.lineTo(895,492);ctx.stroke();ctx.setLineDash([]);ctx.strokeStyle='#dce8b780';ctx.lineWidth=1.4;for(const [x,y] of [[cx,cy],[targetX,targetY]]){if(y>482)continue;ctx.strokeRect(x-22,y-22,44,44);}ctx.fillStyle='#dce8b7';ctx.font='10px monospace';ctx.textAlign='left';ctx.fillText('CUE',cx+27,cy-16);if(scale>.2)ctx.fillText('08',targetX+27,targetY-16);ctx.restore();}
-  ball(239,280,'#b4a234','1');ball(750,193,'#a64430','3');ball(437,337,'#6a4e87','4');ball(183,413,'#364878','2');ball(571,414,'#c4a746','9',1,true);
-  ball(targetX,targetY,'#171a15','8',scale);ball(cx,cy,'#f5efdb','');
-  if(progress<.08){const a=1-progress/.08;ctx.save();ctx.globalAlpha=a;ctx.strokeStyle='#c6b485';ctx.lineWidth=6;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(153,8);ctx.lineTo(304,98);ctx.stroke();ctx.restore();}
-  if(tracking.checked){ctx.textAlign='left';ctx.font='10px monospace';ctx.fillStyle='#b5c39f';ctx.fillText(copy[lang].overlay,67,37);ctx.textAlign='right';ctx.fillText('8-BALL / DEMO',932,37);}
+ function drawBall(b,seconds){
+   let x=px(b.x),y=py(b.y),scale=1;
+   const age=b.pocketedAt===null?0:seconds-b.pocketedAt;
+   if(b.pocketedAt!==null && age>=.24)return;
+   const r=b.radius*400,color=colors[b.id]||'#778f75';
+   ctx.save();
+   if(b.pocketedAt!==null){
+     // Below the throat only: a clipped gravity-driven drop, never an attraction force.
+     const pocket=simulation.pockets[b.pocketIndex];
+     ctx.beginPath();ctx.arc(px(pocket[0]),py(pocket[1]),23,0,Math.PI*2);ctx.clip();
+     x+=b.dropVx*age*400;y+=b.dropVy*age*400;
+     scale=1/(1+.5*simulation.config.gravity*age*age/.15);
+     ctx.globalAlpha=clamp(1-age/.24);
+   }
+   ctx.translate(x,y);ctx.scale(scale,scale);
+   ctx.shadowColor='#0008';ctx.shadowBlur=6;ctx.shadowOffsetY=3;
+   circle(0,0,r,b.id==='9'?'#f7f3da':color);ctx.shadowColor='transparent';
+   ctx.save();ctx.beginPath();ctx.arc(0,0,r,0,Math.PI*2);ctx.clip();
+   if(b.id==='9'){ctx.fillStyle=color;ctx.fillRect(-r,-r*.6,r*2,r*1.2);}
+   // Two opposite number patches rotate with the sphere, not with animation progress.
+   if(b.id!=='cue'){
+     const sign=b.mark[2]<0?-1:1,nx=b.mark[0]*sign,ny=b.mark[1]*sign,nz=Math.abs(b.mark[2]);
+     if(nz>.035){
+       const angle=Math.atan2(ny,nx);
+       ctx.save();ctx.translate(nx*r*.91,ny*r*.91);ctx.rotate(angle);ctx.scale(nz,1);
+       circle(0,0,r*.47,'#f8f4df');ctx.rotate(-angle);ctx.fillStyle='#1c211b';
+       ctx.font='bold '+(r*.7)+'px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+       ctx.fillText(b.id,0,.5);ctx.restore();
+     }
+   }
+   ctx.restore();
+   const g=ctx.createRadialGradient(-r*.32,-r*.4,1,0,0,r*1.15);
+   g.addColorStop(0,'#ffffff65');g.addColorStop(.4,'#ffffff00');g.addColorStop(1,'#00000085');
+   circle(0,0,r,g);ctx.restore();
  }
- function status(){return progress===0?'ready':progress<.42?'moving':progress<.91?'contact':'pot';}
- function update(){const c=copy[lang],s=status();if(lastStatus!==s+lang){result.textContent=c[s];lastStatus=s+lang;}play.textContent=playing?c.pause:progress>=1?c.again:c.play;timeline.value=String(Math.round(progress*1000));time.textContent='00:0'+Math.min(4,Math.floor(progress*4));draw();}
+ function drawTrail(id,state){
+   const index=state.balls.findIndex(b=>b.id===id);
+   ctx.beginPath();let begun=false;
+   for(const frame of simulation.frames){
+     if(frame.time>state.time)break;
+     const b=frame.balls[index];
+     if(!begun){ctx.moveTo(px(b.x),py(b.y));begun=true;}else ctx.lineTo(px(b.x),py(b.y));
+     if(b.pocketedAt!==null)break;
+   }
+   const b=state.balls[index];ctx.lineTo(px(b.x),py(b.y));ctx.stroke();
+ }
+ function draw(state){if(!ctx)return;ctx.setTransform(canvas.width/1000,0,0,canvas.height/610,0,0);ctx.clearRect(0,0,1000,610);
+   ctx.save();ctx.shadowColor='#0007';ctx.shadowBlur=35;ctx.shadowOffsetY=17;rounded(60,63,880,468,25,'#302d22');ctx.restore();
+   rounded(61,62,878,466,24,'#776344');rounded(67,67,866,454,22,'#514633');rounded(76,76,848,436,18,'#1a3424');rounded(100,94,800,400,0,'#216b4c');
+   const glow=ctx.createRadialGradient(490,250,30,500,294,440);glow.addColorStop(0,'#5e997929');glow.addColorStop(1,'#061c2060');rounded(100,94,800,400,0,glow);
+   ctx.save();ctx.globalAlpha=.085;ctx.fillStyle='#d8e6af';for(let n=0;n<2200;n++){const x=104+((n*167)%791),y=98+((n*113)%392);ctx.fillRect(x,y,1,1);}ctx.restore();
+   // Draw the SAME nose segments and mouth gaps used by the contact solver.
+   for(const [ax,ay,bx,by,nx,ny] of simulation.rails){
+     ctx.fillStyle='#123c2c';ctx.beginPath();ctx.moveTo(px(ax),py(ay));ctx.lineTo(px(bx),py(by));
+     ctx.lineTo(px(bx)-nx*13,py(by)-ny*13);ctx.lineTo(px(ax)-nx*13,py(ay)-ny*13);ctx.closePath();ctx.fill();
+     ctx.strokeStyle='#77af8a88';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(px(ax),py(ay));ctx.lineTo(px(bx),py(by));ctx.stroke();
+   }
+   for(const [x,y] of simulation.pockets){circle(px(x),py(y),27,'#817046');circle(px(x),py(y),23,'#080e0a');circle(px(x),py(y)+3,17,'#040a06');}
+   for(let i=1;i<8;i++){if(i===4)continue;circle(100+i*100,76,2.5,'#cebd86');circle(100+i*100,511,2.5,'#cebd86');}for(let i=1;i<4;i++){circle(82,94+i*100,2.5,'#cebd86');circle(918,94+i*100,2.5,'#cebd86');}
+   ctx.textAlign='center';ctx.font='12px monospace';ctx.fillStyle='#acb69b';ctx.fillText(copy[lang].table,500,571);
+   if(tracking.checked){ctx.save();ctx.lineWidth=1.6;ctx.strokeStyle='#ede1b580';drawTrail('cue',state);ctx.strokeStyle='#9de4b680';drawTrail('8',state);ctx.restore();}
+   for(const b of state.balls)drawBall(b,state.time);
+   if(state.time<.18){
+     const cue=simulation.frames[0].balls.find(b=>b.id==='cue');
+     const speed=Math.hypot(cue.vx,cue.vy),ux=cue.vx/speed,uy=cue.vy/speed;
+     const tipX=px(cue.x)-ux*cue.radius*400,tipY=py(cue.y)-uy*cue.radius*400;
+     ctx.save();ctx.globalAlpha=1-state.time/.18;ctx.strokeStyle='#c6b485';ctx.lineWidth=5;ctx.lineCap='round';
+     ctx.beginPath();ctx.moveTo(tipX-ux*170,tipY-uy*170);ctx.lineTo(tipX,tipY);ctx.stroke();ctx.restore();
+   }
+   if(tracking.checked){
+     ctx.save();ctx.strokeStyle='#dce8b780';ctx.lineWidth=1.2;ctx.fillStyle='#dce8b7';ctx.font='10px monospace';ctx.textAlign='left';
+     for(const b of state.balls.filter(b=>['cue','8'].includes(b.id)&&b.pocketedAt===null)){
+       const x=px(b.x),y=py(b.y),r=b.radius*400+6;
+       ctx.strokeRect(x-r,y-r,r*2,r*2);ctx.fillText(b.id==='cue'?'CUE':'08',x+r+5,y-12);
+     }
+     ctx.fillStyle='#b5c39f';ctx.fillText(copy[lang].overlay,67,37);ctx.textAlign='right';ctx.fillText('240 Hz / '+playbackRate.toFixed(2)+'×',932,37);ctx.restore();
+   }
+ }
+ function status(state){
+   if(state.time===0)return 'ready';
+   if(state.balls.find(b=>b.id==='8').pocketedAt!==null)return 'pot';
+   return impact && state.time>=impact.time?'contact':'moving';
+ }
+ function update(){
+   const state=physics.sample(simulation,progress*simulation.duration),c=copy[lang],s=status(state);
+   if(lastStatus!==s+lang){result.textContent=c[s];lastStatus=s+lang;}
+   play.textContent=playing?c.pause:progress>=1?c.again:c.play;
+   timeline.value=String(Math.round(progress*1000));
+   time.textContent=formatTime(state.time);duration.textContent=formatTime(simulation.duration);
+   timeline.setAttribute('aria-valuetext',formatTime(state.time)+' / '+formatTime(simulation.duration));
+   slow.textContent=lang==='fi'?'¼× Hidastus':'¼× Slow motion';
+   slow.setAttribute('aria-pressed',String(playbackRate===.25));
+   cueSpeed.textContent=Math.hypot(...['vx','vy'].map(k=>state.balls.find(b=>b.id==='cue')[k])).toFixed(2)+' m/s';
+   eightSpeed.textContent=Math.hypot(...['vx','vy'].map(k=>state.balls.find(b=>b.id==='8')[k])).toFixed(2)+' m/s';
+   canvas.dataset.simTime=String(state.time);canvas.dataset.playbackRate=String(playbackRate);
+   draw(state);
+ }
  function pause(){playing=false;cancelAnimationFrame(raf);raf=0;update();}
- function frame(now){if(!playing)return;progress=clamp(progress+(now-last)/4000);last=now;if(progress>=1){playing=false;raf=0;update();return;}update();raf=requestAnimationFrame(frame);}
+ function advanceClock(now){progress=clamp(progress+Math.max(0,now-last)/1000*playbackRate/simulation.duration);last=now;}
+ function frame(now){if(!playing)return;advanceClock(now);if(progress>=1){playing=false;raf=0;update();return;}update();raf=requestAnimationFrame(frame);}
  function start(){if(!ctx)return;if(progress>=1)progress=0;if(reduced.matches){progress=1;playing=false;update();return;}playing=true;last=performance.now();update();cancelAnimationFrame(raf);raf=requestAnimationFrame(frame);}
- play.addEventListener('click',()=>playing?pause():start());document.getElementById('restart').addEventListener('click',()=>{pause();progress=0;update();});timeline.addEventListener('input',()=>{const value=Number(timeline.value)/1000;pause();progress=value;update();});tracking.addEventListener('change',draw);
+ play.addEventListener('click',()=>playing?pause():start());document.getElementById('restart').addEventListener('click',()=>{pause();progress=0;update();});timeline.addEventListener('input',()=>{const value=Number(timeline.value)/1000;pause();progress=value;update();});tracking.addEventListener('change',update);
+ slow.addEventListener('click',()=>{if(playing)advanceClock(performance.now());playbackRate=playbackRate===1?.25:1;update();});
  document.getElementById('hero-play').addEventListener('click',()=>{document.getElementById('demo').scrollIntoView({behavior:reduced.matches?'auto':'smooth',block:'center'});progress=0;start();play.focus({preventScroll:true});});
  document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});if('IntersectionObserver' in window)new IntersectionObserver(entries=>{if(!entries[0].isIntersecting&&playing)pause();}).observe(document.getElementById('demo'));
  reduced.addEventListener('change',()=>{if(reduced.matches&&playing)pause();});
