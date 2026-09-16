@@ -1,0 +1,25 @@
+[package]
+name = "biljarditutka"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+publish = false
+
+[workspace]
+members = ["crates/core"]
+resolver = "2"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+dbg_macro = "deny"
+todo = "warn"
+unwrap_used = "warn"
+expect_used = "warn"
+
+[dependencies]
+biljarditutka-core = { path = "crates/core" }
+
+[lints]
+workspace = true
